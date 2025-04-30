@@ -36,11 +36,9 @@ test.describe("Verify Homepage Loads and Key Elements are Visible", () => {
 
     await expect(page).toHaveURL("https://saucelabs.com/sign-up/register");
 
-    await page
-      .getByRole("textbox", { name: "email" })
-      .fill("orare87@yahoo.com");
-    await page.getByRole("textbox", { name: "username" }).fill("horare");
-    await page.getByRole("textbox", { name: "password" }).fill("Pass1234@");
+    await page.getByRole("textbox", { name: "email" }).fill("test@test.com");
+    await page.getByRole("textbox", { name: "username" }).fill("test");
+    await page.getByRole("textbox", { name: "password" }).fill("Test1234@");
 
     await page.getByRole("button", { name: "Sign up" }).click();
 
@@ -67,7 +65,7 @@ test.describe("Verify Homepage Loads and Key Elements are Visible", () => {
 
   test("Explore Resources Section and Access a Resource", async ({ page }) => {
     const resourcesMenu = page.locator("text=Resources").first();
-    
+
     await resourcesMenu.hover();
   });
 });
